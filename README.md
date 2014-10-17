@@ -13,7 +13,8 @@ cordova plugin add https://github.com/erikhuisman/cordova-plugin-opensettings.gi
 ```
 OpenSettings();
 
-// use cordova-plugin-device
+// Use cordova device plugin to check for iOs 8
+// cordova plugin add org.cordova.plugin.device
 if(device.platform === 'iOS' && device.version > 8) {
 	OpenSettings();
 }

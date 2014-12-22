@@ -18,5 +18,8 @@ if(device.platform === 'iOS' && device.version > 8) {
 	OpenSettings();
 }
 
+// for bluetooth popup
+OpenBluetooth();
+
 ```
 

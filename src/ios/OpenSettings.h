@@ -3,9 +3,11 @@
 //
 
 #import <Cordova/CDV.h>
+#import <CoreBluetooth/CoreBluetooth.h>
 
 @interface OpenSettings : CDVPlugin
 
-- (void)open:(CDVInvokedUrlCommand*)command;
+- (void)settings:(CDVInvokedUrlCommand*)command;
+- (void)bluetooth:(CDVInvokedUrlCommand*)command;
 
 @end

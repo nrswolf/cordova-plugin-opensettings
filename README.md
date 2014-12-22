@@ -11,13 +11,16 @@ cordova plugin add https://github.com/erikhuisman/cordova-plugin-opensettings.gi
 ## Usage
 
 ```
-OpenSettings();
+OpenSettings.settings();
 
 // Use cordova device plugin to check for iOs 8
 // cordova plugin add org.cordova.plugin.device
 if(device.platform === 'iOS' && device.version > 8) {
-	OpenSettings();
+	OpenSettings.settings();
 }
+
+// open bt settings
+OpenSettings.bluetooth();
 
 ```
 

@@ -7,7 +7,7 @@
     <license>Apache 2.0</license>
     <keywords>cordova, phonegap, iOS8, url, scheme</keywords>
     <engines>
-        <engine name="cordova" version=">=3.6.3"/>
+        <engine name="cordova" version=">=3"/>
     </engines>
     <js-module src="www/OpenSettings.js" name="OpenSettings">
         <clobbers target="window.OpenSettings"/>

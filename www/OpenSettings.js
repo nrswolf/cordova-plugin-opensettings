@@ -1,6 +1,6 @@
-module.exports = open = {};
+module.exports = OpenSettings = {};
 
-open.settings = function(app, callback) {
+OpenSettings.settings = function(app, callback) {
 	cordova.exec(
 		// Success callback
 		callback,
@@ -15,7 +15,7 @@ open.settings = function(app, callback) {
 	);
 };
 
-open.bluetooth = function (app, callback) {
+OpenSettings.bluetooth = function (app, callback) {
 	cordova.exec(
 		// Success callback
 		callback,
@@ -30,4 +30,4 @@ open.bluetooth = function (app, callback) {
 	);
 };
 
-return open;
+return OpenSettings;

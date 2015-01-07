@@ -40,6 +40,7 @@
   NSLog(@"Current bt status: %@", stateName);
   NSDictionary *dict = @{@"status": stateName};
 
+  pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsDictionary:dict];
   [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
 
 }

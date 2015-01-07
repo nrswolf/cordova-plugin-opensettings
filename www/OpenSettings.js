@@ -30,4 +30,19 @@ OpenSettings.bluetooth = function (app, callback) {
 	);
 };
 
+OpenSettings.bluetoothStatus = function (app, callback) {
+	cordova.exec(
+		// Success callback
+		callback,
+		// Failure callback
+		function(err) { console.log('Missing app scheme.');},
+		// Native Class Name
+		"OpenSettings",
+		// Name of method in native class.
+		"bluetoothStatus",
+		// array of args to pass to method.
+		[app]
+	);
+};
+
 return OpenSettings;

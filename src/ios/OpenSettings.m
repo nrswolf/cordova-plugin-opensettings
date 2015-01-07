@@ -7,6 +7,7 @@
 
 @implementation OpenSettings
 
+
 -(void) settings:(CDVInvokedUrlCommand*)command {
 
     CDVPluginResult* pluginResult = nil;
@@ -23,12 +24,40 @@
 
     CDVPluginResult* pluginResult = nil;
 
-	[[CBCentralManager alloc] initWithDelegate:self queue:nil];
+    [[CBCentralManager alloc] initWithDelegate:self queue:nil];
 
     // TODO check if is iOS8 otherwise error
     pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK];
 
     [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
+}
+
+-(void) bluetoothStatus:(CDVInvokedUrlCommand*)command {
+
+  CDVPluginResult* pluginResult = nil;
+  NSString *stateName = [self peripherialStateAsString:_peripheralManager.state];
+
+  NSLog(@"Current bt status: %@", stateName);
+  NSDictionary *dict = @{@"status": stateName};
+
+  [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
+
+}
+
+- (void)pluginInitialize {
+    self.peripheralManager = [[CBPeripheralManager alloc] initWithDelegate:self queue:nil options:nil];
+}
+
+- (void) peripheralManagerDidUpdateState:(CBPeripheralManager *)peripheral { }
+
+- (NSString*) peripherialStateAsString: (CBPeripheralManagerState) state {
+    NSDictionary *dict = @{@(CBPeripheralManagerStatePoweredOff): @"PeripheralManagerStatePoweredOff",
+                           @(CBPeripheralManagerStatePoweredOn): @"PeripheralManagerStatePoweredOn",
+                           @(CBPeripheralManagerStateResetting): @"PeripheralManagerStateResetting",
+                           @(CBPeripheralManagerStateUnauthorized): @"PeripheralManagerStateUnauthorized",
+                           @(CBPeripheralManagerStateUnknown): @"PeripheralManagerStateUnknown",
+                           @(CBPeripheralManagerStateUnsupported): @"PeripheralManagerStateUnsupported"};
+    return [dict objectForKey:[NSNumber numberWithInteger:state]];
 }
 
 @end

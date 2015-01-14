@@ -1,24 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" id="nl.tapme.cordova.settings" version="0.1">
-    <name>Open Settings</name>
-    <author>Erik Huisman</author>
-    <description>OpenSettings opens your apps settings in settings.app. (makes it more easy for users to turn on Location Services)
-    </description>
-    <license>Apache 2.0</license>
-    <keywords>cordova, phonegap, iOS8, url, scheme</keywords>
-    <engines>
-        <engine name="cordova" version=">=3"/>
-    </engines>
-    <js-module src="www/OpenSettings.js" name="OpenSettings">
-        <clobbers target="window.OpenSettings"/>
-    </js-module>
-    <platform name="ios">
-        <config-file target="config.xml" parent="/*">
-            <feature name="OpenSettings">
-                <param name="ios-package" value="OpenSettings"/>
-            </feature>
-        </config-file>
-        <header-file src="src/ios/OpenSettings.h"/>
-        <source-file src="src/ios/OpenSettings.m"/>
-    </platform>
+	<name>Open Settings</name>
+	<author>Erik Huisman</author>
+	<description>OpenSettings opens your apps settings in settings.app. (makes it more easy for users to turn on Location Services)
+	</description>
+	<license>Apache 2.0</license>
+	<keywords>cordova, phonegap, iOS8, url, scheme</keywords>
+	<engines>
+		<engine name="cordova" version=">=3"/>
+	</engines>
+	<js-module src="www/OpenSettings.js" name="OpenSettings">
+		<clobbers target="window.OpenSettings"/>
+	</js-module>
+	<platform name="ios">
+		<config-file target="config.xml" parent="/*">
+			<feature name="OpenSettings">
+				<param name="ios-package" value="OpenSettings"/>
+			</feature>
+		</config-file>
+		<header-file src="src/ios/OpenSettings.h"/>
+		<source-file src="src/ios/OpenSettings.m"/>
+	</platform>
+	<platform name="android">
+		<config-file target="AndroidManifest.xml" parent="/*">
+			<uses-feature android:name="android.hardware.bluetooth_le" android:required="true" />
+		</config-file>
+	</platform>
 </plugin>

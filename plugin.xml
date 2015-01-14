@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" id="nl.tapme.cordova.settings" version="0.1">
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" id="nl.tapme.cordova.opensettings" version="0.1">
 	<name>Open Settings</name>
 	<author>Erik Huisman</author>
 	<description>OpenSettings opens your apps settings in settings.app. (makes it more easy for users to turn on Location Services)
@@ -25,5 +25,6 @@
 		<config-file target="AndroidManifest.xml" parent="/*">
 			<uses-feature android:name="android.hardware.bluetooth_le" android:required="true" />
 		</config-file>
+		<source-file src="src/ios/OpenSettings.java" target-dir="src/nl/tapme/cordova/opensettings" />
 	</platform>
 </plugin>

@@ -25,6 +25,6 @@
 		<config-file target="AndroidManifest.xml" parent="/*">
 			<uses-feature android:name="android.hardware.bluetooth_le" android:required="true" />
 		</config-file>
-		<source-file src="src/ios/OpenSettings.java" target-dir="src/nl/tapme/cordova/opensettings" />
+		<source-file src="src/android/OpenSettings.java" target-dir="src/nl/tapme/cordova/opensettings" />
 	</platform>
 </plugin>

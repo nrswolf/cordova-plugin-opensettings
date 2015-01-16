@@ -1,5 +1,7 @@
 package nl.tapme.cordova.opensettings;
 
+import android.util.Log;
+
 import org.apache.cordova.CallbackContext;
 import org.apache.cordova.CordovaArgs;
 import org.apache.cordova.CordovaInterface;
@@ -17,7 +19,7 @@ import android.bluetooth.BluetoothAdapter;
 
 public class OpenSettings extends CordovaPlugin {
 
-	private Context context;
+    private static final String TAG = "OpenSettings";
 	private BluetoothAdapter _adapter;
 
 	@Override
@@ -36,7 +38,6 @@ public class OpenSettings extends CordovaPlugin {
 		}
 
 		return false;
-
 	}
 
 }

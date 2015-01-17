@@ -22,9 +22,11 @@
 		<source-file src="src/ios/OpenSettings.m"/>
 	</platform>
 	<platform name="android">
-		<feature name="OpenSettings">
-			<param name="android-package" value="nl.tapme.cordova.opensettings"/>
-		</feature>
+    	<config-file target="config.xml" parent="/*">
+			<feature name="OpenSettings">
+				<param name="android-package" value="nl.tapme.cordova.opensettings" />
+			</feature>
+		</config-file>
 		<config-file target="AndroidManifest.xml" parent="/*">
 			<uses-feature android:name="android.hardware.bluetooth_le" android:required="true" />
 		</config-file>

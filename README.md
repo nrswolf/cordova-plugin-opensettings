@@ -1,26 +1,18 @@
 OpenSettings
 ======
-OpenSettings opens your apps settings in settings.app (makes it more easy for users to turn on Location Services).
+Fork of original repo to remove Bluetooth dependencies.
 
 ## Installation
 
 ```
-cordova plugin add https://github.com/erikhuisman/cordova-plugin-opensettings.git
+cordova plugin add https://github.com/nrswolf/cordova-plugin-opensettings
 ```
 
 ## Usage
 
-```
-OpenSettings.settings();
-
-// Use cordova device plugin to check for iOs 8
-// cordova plugin add org.cordova.plugin.device
+```javascript
 if(device.platform === 'iOS' && device.version > 8) {
 	OpenSettings.settings();
 }
-
-// open bt settings
-OpenSettings.bluetooth();
-
 ```
 

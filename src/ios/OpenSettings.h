@@ -3,13 +3,9 @@
 //
 
 #import <Cordova/CDV.h>
-#import <CoreBluetooth/CoreBluetooth.h>
 
-@interface OpenSettings : CDVPlugin<CBPeripheralManagerDelegate> { }
-@property (retain) CBPeripheralManager *peripheralManager;
+@interface OpenSettings : CDVPlugin
 
-- (void)settings:(CDVInvokedUrlCommand*)command;
-- (void)bluetooth:(CDVInvokedUrlCommand*)command;
-- (void)bluetoothStatus:(CDVInvokedUrlCommand*)command;
+- (void) settings:(CDVInvokedUrlCommand*)command;
 
 @end
